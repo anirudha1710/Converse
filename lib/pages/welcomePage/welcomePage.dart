@@ -17,20 +17,7 @@ class WelcomePage extends StatelessWidget {
               SizedBox(
                 height: 30,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SvgPicture.asset(
-                    AssetsImage.appIconsSVG,
-                  ),
-                ],
-              ),
-              Text(
-                AppString.appName,
-                style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                      color: Theme.of(context).colorScheme.secondary,
-                    ),
-              ),
+
             ],
           ),
         ),
