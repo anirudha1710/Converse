@@ -9,7 +9,7 @@ var darkTheme = ThemeData(
     primary: dPrimaryColor,
     onPrimary: dOnBackgroundColor,
     background: dBackgroundColor,
-    onBackground: dOnContainerColor,
+    onBackground: dOnBackgroundColor,
     primaryContainer: dContainerColor,
     onPrimaryContainer: dOnContainerColor,
   ),
