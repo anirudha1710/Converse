@@ -1,6 +1,6 @@
 class AssetsImage{
-  static const iconsPath = "assets/icons/";
-  static const imagesPath = "assets/images/";
+  static const iconsPath = "assets/icons";
+  static const imagesPath = "assets/images";
 
   // PNG Images only
 
