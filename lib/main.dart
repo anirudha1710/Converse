@@ -1,5 +1,6 @@
 import 'package:converse/config/theme.dart';
 import 'package:converse/pages/splacePage/splacePage.dart';
+import 'package:converse/pages/welcomePage/welcomePage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: ThemeMode.dark,
-      home: SplacePage(),
+      home: WelcomePage(),
     );
   }
 }
