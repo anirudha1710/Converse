@@ -1,5 +1,6 @@
 import 'package:converse/config/images.dart';
 import 'package:converse/config/string.dart';
+import 'package:converse/pages/homePage/widget/chatsList.dart';
 import 'package:converse/pages/homePage/widget/tabBar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -18,7 +19,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-        title: Text(AppString.appName,),
+        title: Text(
+          AppString.appName,
+        ),
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
           child: SvgPicture.asset(
@@ -37,8 +40,32 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         ],
         bottom: myTabBar(tabController, context),
       ),
-      body: Column(
-        children: [],
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        child: Icon(Icons.add),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(10),
+        child: TabBarView( controller: tabController,
+          children: [
+            ChatList(),
+            ListView(
+              children: [
+                ListTile(
+                  title: Text("Name Anirudha"),
+                )
+              ],
+            ),
+            ListView(
+              children: [
+                ListTile(
+                  title: Text("Name Shashwat"),
+                )
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
