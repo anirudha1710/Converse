@@ -1,5 +1,6 @@
 import 'dart:ffi';
 
+import 'package:converse/pages/auth/widgets/signupForm.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,7 +13,7 @@ class AuthPageBody extends StatelessWidget {
   Widget build(BuildContext context) {
     RxBool isLogin = false.obs;
     return Container(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       // height: 400,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
@@ -30,7 +31,7 @@ class AuthPageBody extends StatelessWidget {
                       onTap: (){
                         isLogin.value = true;
                       },
-                      child: Container(
+                      child: SizedBox(
                         width: MediaQuery.sizeOf(context).width/2.5,
                         child: Column(
                           children: [
@@ -40,11 +41,11 @@ class AuthPageBody extends StatelessWidget {
                                   ? Theme.of(context).textTheme.bodyLarge
                                   : Theme.of(context).textTheme.labelLarge,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 5,
                             ),
                             AnimatedContainer(
-                              duration: Duration(milliseconds: 200),
+                              duration: const Duration(milliseconds: 200),
                               width: isLogin.value ? 100 : 0,
                               height: 3,
                               decoration: BoxDecoration(
@@ -60,7 +61,7 @@ class AuthPageBody extends StatelessWidget {
                       onTap: (){
                         isLogin.value = false;
                       },
-                      child: Container(
+                      child: SizedBox(
                         width: MediaQuery.sizeOf(context).width/2.5,
                         child: Column(
                           children: [
@@ -70,11 +71,11 @@ class AuthPageBody extends StatelessWidget {
                                   ? Theme.of(context).textTheme.labelLarge
                                   : Theme.of(context).textTheme.bodyLarge,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 5,
                             ),
                             AnimatedContainer(
-                              duration: Duration(milliseconds: 200),
+                              duration: const Duration(milliseconds: 200),
                               width: isLogin.value ? 0 : 100,
                               height: 3,
                               decoration: BoxDecoration(
@@ -88,7 +89,7 @@ class AuthPageBody extends StatelessWidget {
                     )
                   ],
                 )),
-                LoginForm(),
+                Obx(() => isLogin.value ? const LoginForm() : const SignupForm())
               ],
             ),
           ),

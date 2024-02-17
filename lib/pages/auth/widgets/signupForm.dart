@@ -6,16 +6,22 @@ class SignupForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
         SizedBox(height: 40,),
         TextField(
           decoration: InputDecoration(
-              hintText: "Full Namr",
+              hintText: "Full Name",
+              prefixIcon: Icon(Icons.person)),
+        ),
+        SizedBox(height: 30,),
+        TextField(
+          decoration: InputDecoration(
+              hintText: "Email",
               prefixIcon: Icon(Icons.person)),
         ),
         SizedBox(
-          height: 40,
+          height: 30,
         ),
         TextField(
           decoration: InputDecoration(
@@ -27,7 +33,7 @@ class SignupForm extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            PrimaryButton(btnName: "LOGIN", icon: Icons.lock_open_outlined),
+            PrimaryButton(btnName: "SIGNUP", icon: Icons.lock_open_outlined),
           ],
         )
       ],

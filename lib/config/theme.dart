@@ -6,7 +6,7 @@ var darkTheme = ThemeData(
   brightness: Brightness.dark,
   useMaterial3: true,
 
-  inputDecorationTheme: InputDecorationTheme(
+  inputDecorationTheme: const InputDecorationTheme(
     fillColor: dBackgroundColor,
     filled: true,
   ),

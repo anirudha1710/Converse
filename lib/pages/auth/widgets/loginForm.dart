@@ -6,7 +6,7 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
         SizedBox(height: 40,),
         TextField(
@@ -15,7 +15,7 @@ class LoginForm extends StatelessWidget {
               prefixIcon: Icon(Icons.alternate_email_rounded)),
         ),
         SizedBox(
-          height: 40,
+          height: 30,
         ),
         TextField(
           decoration: InputDecoration(

@@ -8,18 +8,20 @@ class AuthPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.all(20),
-          child: Column(
-            children: [
-              WelcomeHeading(),
-              SizedBox(
-                height: 20,
-              ),
-              AuthPageBody(),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                WelcomeHeading(),
+                SizedBox(
+                  height: 20,
+                ),
+                AuthPageBody(),
+              ],
+            ),
           ),
         ),
       ),
