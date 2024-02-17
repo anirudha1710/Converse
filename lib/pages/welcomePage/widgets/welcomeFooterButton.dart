@@ -2,6 +2,7 @@ import 'package:converse/config/images.dart';
 import 'package:converse/config/string.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:slide_to_act/slide_to_act.dart';
 
 class WelcomeFooter extends StatelessWidget {
@@ -11,9 +12,9 @@ class WelcomeFooter extends StatelessWidget {
   Widget build(BuildContext context) {
     return SlideAction(
       onSubmit: () {
-
+        Get.offAllNamed("/authPage");
       },
-      sliderButtonIcon: Container(
+      sliderButtonIcon: SizedBox(
         width: 25,
         height: 25,
         child: SvgPicture.asset(

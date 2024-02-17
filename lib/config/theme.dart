@@ -5,6 +5,12 @@ var lightTheme = ThemeData();
 var darkTheme = ThemeData(
   brightness: Brightness.dark,
   useMaterial3: true,
+
+  inputDecorationTheme: InputDecorationTheme(
+    fillColor: dBackgroundColor,
+    filled: true,
+  ),
+
   colorScheme: const ColorScheme.dark(
     primary: dPrimaryColor,
     onPrimary: dOnBackgroundColor,
@@ -54,6 +60,20 @@ var darkTheme = ThemeData(
       color: dOnContainerColor,
       fontFamily: "Poppins",
       fontWeight: FontWeight.w400,
+    ),
+
+    bodyLarge: TextStyle(
+      fontSize: 18,
+      color: dOnBackgroundColor,
+      fontFamily: "Poppins",
+      fontWeight: FontWeight.w500,
+    ),
+
+    bodyMedium: TextStyle(
+      fontSize: 15,
+      color: dOnBackgroundColor,
+      fontFamily: "Poppins",
+      fontWeight: FontWeight.w500,
     ),
   ),
 );

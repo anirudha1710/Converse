@@ -38,6 +38,7 @@ dependencies:
   flutter_launcher_icons: ^0.13.1
   flutter_svg: ^2.0.9
   slide_to_act: ^2.0.2
+  get: ^4.6.6 #for state management
 
 dev_dependencies:
   flutter_test:
