@@ -1,6 +1,7 @@
 import 'package:converse/config/pagePath.dart';
 import 'package:converse/config/theme.dart';
 import 'package:converse/pages/auth/authPage.dart';
+import 'package:converse/pages/homePage/homePage.dart';
 import 'package:converse/pages/splacePage/splacePage.dart';
 import 'package:converse/pages/welcomePage/welcomePage.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       getPages: pagePath,
       darkTheme: darkTheme,
       themeMode: ThemeMode.dark,
-      home: WelcomePage(),
+      home: HomePage(),
     );
   }
 }
