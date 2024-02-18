@@ -39,6 +39,8 @@ dependencies:
   flutter_svg: ^2.0.9
   slide_to_act: ^2.0.2
   get: ^4.6.6 #for state management
+  firebase_core: ^2.21.0
+  firebase_auth: ^4.15.0
 
 dev_dependencies:
   flutter_test:

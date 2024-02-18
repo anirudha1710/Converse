@@ -11,7 +11,7 @@ class AuthPageBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    RxBool isLogin = false.obs;
+    RxBool isLogin = true.obs;
     return Container(
       padding: const EdgeInsets.all(20),
       // height: 400,
@@ -62,7 +62,7 @@ class AuthPageBody extends StatelessWidget {
                         isLogin.value = false;
                       },
                       child: SizedBox(
-                        width: MediaQuery.sizeOf(context).width/2.5,
+                        width: MediaQuery.sizeOf(context).width/2.6,
                         child: Column(
                           children: [
                             Text(
