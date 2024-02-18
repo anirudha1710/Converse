@@ -11,8 +11,8 @@ class ChatTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 10),
-      padding: EdgeInsets.all(10),
+      margin: const EdgeInsets.only(bottom: 10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: Theme.of(context).colorScheme.primaryContainer,
@@ -26,7 +26,7 @@ class ChatTile extends StatelessWidget {
                 imageUrl,
                 width: 70,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 15,
               ),
               Column(
@@ -36,7 +36,7 @@ class ChatTile extends StatelessWidget {
                     name,
                     style: Theme.of(context).textTheme.bodyLarge,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
                   Text(

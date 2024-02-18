@@ -14,53 +14,53 @@ class ChatList extends StatelessWidget {
           onTap: () {
             Get.toNamed("/chatPage");
           },
-          child: ChatTile(
+          child: const ChatTile(
               imageUrl: AssetsImage.girlPic,
               name: "Sejal",
               lastChat: "Baad mai baat karte hai",
               lasttime: "1:34 AM"),
         ),
-        ChatTile(
+        const ChatTile(
             imageUrl: AssetsImage.boyPic,
             name: "Shashwat",
             lastChat: "Bakchod ho kya",
             lasttime: "12:45 AM"),
-        ChatTile(
+        const ChatTile(
             imageUrl: AssetsImage.girlPic,
             name: "Sejal",
             lastChat: "Baad mai baat karte hai",
             lasttime: "1:34 AM"),
-        ChatTile(
+        const ChatTile(
             imageUrl: AssetsImage.boyPic,
             name: "Shashwat",
             lastChat: "Bakchod ho kya",
             lasttime: "12:45 AM"),
-        ChatTile(
+        const ChatTile(
             imageUrl: AssetsImage.girlPic,
             name: "Sejal",
             lastChat: "Baad mai baat karte hai",
             lasttime: "1:34 AM"),
-        ChatTile(
+        const ChatTile(
             imageUrl: AssetsImage.boyPic,
             name: "Shashwat",
             lastChat: "Bakchod ho kya",
             lasttime: "12:45 AM"),
-        ChatTile(
+        const ChatTile(
             imageUrl: AssetsImage.girlPic,
             name: "Sejal",
             lastChat: "Baad mai baat karte hai",
             lasttime: "1:34 AM"),
-        ChatTile(
+        const ChatTile(
             imageUrl: AssetsImage.boyPic,
             name: "Shashwat",
             lastChat: "Bakchod ho kya",
             lasttime: "12:45 AM"),
-        ChatTile(
+        const ChatTile(
             imageUrl: AssetsImage.girlPic,
             name: "Sejal",
             lastChat: "Baad mai baat karte hai",
             lasttime: "1:34 AM"),
-        ChatTile(
+        const ChatTile(
             imageUrl: AssetsImage.boyPic,
             name: "Shashwat",
             lastChat: "Bakchod ho kya",

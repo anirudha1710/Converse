@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 myTabBar(TabController tabController, BuildContext context) {
   return PreferredSize(
-    preferredSize: Size.fromHeight(60),
+    preferredSize: const Size.fromHeight(60),
     child: TabBar(
       controller: tabController,
       indicatorWeight: 4,
@@ -10,13 +10,13 @@ myTabBar(TabController tabController, BuildContext context) {
       labelStyle: Theme.of(context).textTheme.bodyLarge,
       unselectedLabelStyle: Theme.of(context).textTheme.labelLarge,
       tabs: [
-        Text(
+        const Text(
           "Chats",
         ),
-        Text(
+        const Text(
           "Groups",
         ),
-        Text(
+        const Text(
           "Calls",
         ),
       ],

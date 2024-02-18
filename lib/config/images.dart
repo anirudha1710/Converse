@@ -18,4 +18,8 @@ class AssetsImage{
   static const chatGallerySVG = '$iconsPath/gallery.svg';
   static const chatMicSVG = '$iconsPath/mic.svg';
 
+
+  static const profileVideoCall = '$iconsPath/videoCall.svg';
+  static const profileAudioCall = '$iconsPath/call.svg';
+
 }

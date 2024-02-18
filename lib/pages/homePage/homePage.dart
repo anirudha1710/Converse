@@ -4,6 +4,7 @@ import 'package:converse/pages/homePage/widget/chatsList.dart';
 import 'package:converse/pages/homePage/widget/tabBar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -34,7 +35,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             icon: Icon(Icons.search),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.toNamed("/profilePage");
+            },
             icon: Icon(Icons.more_vert),
           ),
         ],
@@ -51,14 +54,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           children: [
             ChatList(),
             ListView(
-              children: [
+              children: const [
                 ListTile(
                   title: Text("Name Anirudha"),
                 )
               ],
             ),
             ListView(
-              children: [
+              children: const [
                 ListTile(
                   title: Text("Name Shashwat"),
                 )
