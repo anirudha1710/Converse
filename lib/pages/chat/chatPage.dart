@@ -1,5 +1,7 @@
 import 'package:converse/config/images.dart';
+import 'package:converse/pages/chat/widget/chatBubble.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class ChatPage extends StatelessWidget {
   const ChatPage({super.key});
@@ -28,25 +30,82 @@ class ChatPage extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.phone),
+            icon: const Icon(Icons.phone),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.video_call),
+            icon: const Icon(Icons.video_call),
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Column(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: Container(
+        margin: const EdgeInsets.all(10),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15,),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(100),
+          color: Theme.of(context).colorScheme.primaryContainer,
+        ),
+        child: Row(
           children: [
             Container(
-              child: Row(
-                children: [
-                  Text("12:32"),
-                ],
+              width: 30,
+              height: 30,
+              child: SvgPicture.asset(
+                AssetsImage.chatMicSVG,
               ),
-            )
+            ),
+            const SizedBox(width: 10,),
+            const Expanded(
+              child: TextField(
+                decoration: InputDecoration(filled: false, hintText: "Type message...."),
+              ),
+            ),
+            const SizedBox(width: 10,),
+            Container(
+              width: 30,
+              height: 30,
+              child: SvgPicture.asset(
+                AssetsImage.chatGallerySVG,
+              ),
+            ),
+            const SizedBox(width: 10,),
+            Container(
+              width: 30,
+              height: 30,
+              child: SvgPicture.asset(
+                AssetsImage.chatSendSVG,
+              ),
+            ),
+          ],
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(10),
+        child: ListView(
+          children: [
+            const ChatBubble(
+              message: "Hey what's up",
+              imageUrl: "",
+              isComming: true,
+              status: "read",
+              time: "2:30 PM",
+            ),
+            const ChatBubble(
+              message: "good",
+              imageUrl: "",
+              isComming: false,
+              status: "read",
+              time: "2:30 PM",
+            ),
+            const ChatBubble(
+              message: "Manali kaisa tha😂😂",
+              imageUrl:
+                  "https://www.tripsavvy.com/thmb/ZDRQXV-PiFDTFZu4x22mZkYuw9s=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-930881934-5ae56fe48023b90036464e72.jpg",
+              isComming: false,
+              status: "read",
+              time: "2:30 PM",
+            ),
           ],
         ),
       ),
