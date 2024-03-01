@@ -17,11 +17,12 @@ class UserModel {
 
   UserModel.fromJson(Map<String, dynamic> json){
     id = json["id"];
-    id = json["name"];
-    id = json["email"];
-    id = json["profileImage"];
-    id = json["phonenumber"];
+    name = json["name"];
+    email = json["email"];
+    profileImage = json["profileImage"];
+    phonenumber = json["phonenumber"];
   }
+
 
   Map<String, dynamic> toJson(){
     final Map<String, dynamic> _data = <String, dynamic> {};

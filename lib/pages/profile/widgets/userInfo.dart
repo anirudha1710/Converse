@@ -6,7 +6,7 @@ import '../../../config/images.dart';
 import '../../../controller/profileController.dart';
 
 class LoginUserInfo extends StatelessWidget {
-  const LoginUserInfo({super.key});
+  const LoginUserInfo({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class LoginUserInfo extends StatelessWidget {
                   children: [
                     Obx(
                       () => Text(
-                        profileController.currentUser.value.name! ?? "User",
+                        profileController.currentUser.value.name ?? "User",
                         style: Theme.of(context).textTheme.bodyLarge,
                       ),
                     ),
@@ -53,7 +53,8 @@ class LoginUserInfo extends StatelessWidget {
                   children: [
                     Obx(
                       () => Text(
-                        profileController.currentUser.value.email!,
+                        profileController.currentUser.value?.email ??
+                            "No email available",
                         style: Theme.of(context).textTheme.labelLarge,
                       ),
                     ),
@@ -152,4 +153,3 @@ class LoginUserInfo extends StatelessWidget {
     );
   }
 }
-//40:20
