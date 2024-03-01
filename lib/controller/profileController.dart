@@ -9,7 +9,8 @@ class ProfileController extends GetxController {
 
   Rx<UserModel> currentUser = UserModel().obs;
 
-  void onInit() async{
+  @override
+  void onInit() async {
     super.onInit();
     await getUserDetails();
   }

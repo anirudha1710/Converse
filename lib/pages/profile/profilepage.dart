@@ -13,7 +13,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AuthController authController = Get.put(AuthController());
-
+    ProfileController profileController = Get.put(ProfileController());
     return Scaffold(
       appBar: AppBar(
         title: const Text("Profile"),
@@ -29,12 +29,17 @@ class ProfilePage extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         child: Column(
           children: [
-            LoginUserInfo(),
-            Spacer(),
-            ElevatedButton(onPressed: () {authController.logoutUser();}, child: Text("Logout"),),
+            const LoginUserInfo(),
+            const Spacer(),
+            ElevatedButton(
+              onPressed: () {
+                authController.logoutUser();
+              },
+              child: const Text("Logout"),
+            ),
           ],
         ),
       ),

@@ -12,7 +12,7 @@ class LoginUserInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     ProfileController profileController = Get.put(ProfileController());
     return Container(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       //height: 100,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
@@ -21,98 +21,135 @@ class LoginUserInfo extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        AssetsImage.girlPic,
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      AssetsImage.girlPic,
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Obx(
+                      () => Text(
                         profileController.currentUser.value.name! ?? "User",
                         style: Theme.of(context).textTheme.bodyLarge,
                       ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Obx(
+                      () => Text(
                         profileController.currentUser.value.email!,
                         style: Theme.of(context).textTheme.labelLarge,
                       ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Container(
-                        height:50,
-                        padding: EdgeInsets.all(15),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Theme.of(context).colorScheme.background,
-                        ),
-                        child: Row(
-                          children: [
-                            SvgPicture.asset(AssetsImage.profileAudioCall,width: 25,color: Color(0xff039c00),),
-                            SizedBox(width: 10,),
-                            Text("Call",style: TextStyle(color: Color(0xff039c00),),),
-                          ],
-                        ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Container(
+                      height: 50,
+                      padding: const EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: Theme.of(context).colorScheme.background,
                       ),
-                      Container(
-                        height:50,
-                        padding: EdgeInsets.all(15),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Theme.of(context).colorScheme.background,
-                        ),
-                        child: Row(
-                          children: [
-                            SvgPicture.asset(AssetsImage.profileVideoCall,width: 25,color: Color(0xffFF9900),),
-                            SizedBox(width: 10,),
-                            Text("Video",style: TextStyle(color: Color(0xffFF9900),),),
-                          ],
-                        ),
+                      child: Row(
+                        children: [
+                          SvgPicture.asset(
+                            AssetsImage.profileAudioCall,
+                            width: 25,
+                            color: const Color(0xff039c00),
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          const Text(
+                            "Call",
+                            style: TextStyle(
+                              color: Color(0xff039c00),
+                            ),
+                          ),
+                        ],
                       ),
-                      Container(
-                        height:50,
-                        padding: EdgeInsets.all(15),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Theme.of(context).colorScheme.background,
-                        ),
-                        child: Row(
-                          children: [
-                            SvgPicture.asset(AssetsImage.appIconsSVG,width: 25,),
-                            SizedBox(width: 10,),
-                            Text("Chat",style: TextStyle(color: Color(0xff0057FF),),),
-                          ],
-                        ),
+                    ),
+                    Container(
+                      height: 50,
+                      padding: const EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: Theme.of(context).colorScheme.background,
                       ),
-
-                    ],
-                  )
-                ],
-              ))
+                      child: Row(
+                        children: [
+                          SvgPicture.asset(
+                            AssetsImage.profileVideoCall,
+                            width: 25,
+                            color: const Color(0xffFF9900),
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          const Text(
+                            "Video",
+                            style: TextStyle(
+                              color: Color(0xffFF9900),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      height: 50,
+                      padding: const EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: Theme.of(context).colorScheme.background,
+                      ),
+                      child: Row(
+                        children: [
+                          SvgPicture.asset(
+                            AssetsImage.appIconsSVG,
+                            width: 25,
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          const Text(
+                            "Chat",
+                            style: TextStyle(
+                              color: Color(0xff0057FF),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
         ],
       ),
     );
   }
 }
+//40:20
