@@ -1,3 +1,4 @@
+import 'package:converse/controller/profileController.dart';
 import 'package:converse/widget/primaryButton.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -8,10 +9,11 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     RxBool isEdit = false.obs;
-    TextEditingController name = TextEditingController(text: "Anirudha Sharma");
-    TextEditingController email = TextEditingController(text: "ani@gmail.com");
-    TextEditingController phone = TextEditingController(text: "0123456789");
-    TextEditingController status = TextEditingController(text: "jghrfuihdi");
+    ProfileController profileController = Get.put(ProfileController());
+    TextEditingController name = TextEditingController(text: profileController.currentUser.value.name);
+    TextEditingController email = TextEditingController(text: profileController.currentUser.value.email);
+    TextEditingController phone = TextEditingController(text: profileController.currentUser.value.phoneNumber);
+    TextEditingController about = TextEditingController(text: profileController.currentUser.value.about);
     return Scaffold(
       appBar: AppBar(
         title: Text("Profile"),
@@ -69,7 +71,7 @@ class ProfilePage extends StatelessWidget {
                         ),
                         Obx(
                           () => TextField(
-                            controller: status,
+                            controller: about,
                             enabled: isEdit.value,
                             decoration: InputDecoration(
                               filled: isEdit.value,
