@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:converse/controller/imagePicker.dart';
 import 'package:converse/controller/profileController.dart';
 import 'package:converse/widget/primaryButton.dart';
 import 'package:flutter/material.dart';
@@ -10,10 +13,19 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     RxBool isEdit = false.obs;
     ProfileController profileController = Get.put(ProfileController());
-    TextEditingController name = TextEditingController(text: profileController.currentUser.value.name);
-    TextEditingController email = TextEditingController(text: profileController.currentUser.value.email);
-    TextEditingController phone = TextEditingController(text: profileController.currentUser.value.phoneNumber);
-    TextEditingController about = TextEditingController(text: profileController.currentUser.value.about);
+    TextEditingController name =
+        TextEditingController(text: profileController.currentUser.value.name);
+    TextEditingController email =
+        TextEditingController(text: profileController.currentUser.value.email);
+    TextEditingController phone = TextEditingController(
+        text: profileController.currentUser.value.phoneNumber);
+    TextEditingController about =
+        TextEditingController(text: profileController.currentUser.value.about);
+    ImagePickerController imagePickerController =
+        Get.put(ImagePickerController());
+    RxString imagePath =
+        "".obs;
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Profile"),
@@ -40,13 +52,62 @@ class ProfilePage extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            CircleAvatar(
-                              backgroundColor:
-                                  Theme.of(context).colorScheme.background,
-                              radius: 80,
-                              child: Icon(
-                                Icons.image,
-                              ),
+                            Obx(
+                              () => isEdit.value
+                                  ? InkWell(
+                                      onTap: () async {
+                                        imagePath.value =
+                                            await imagePickerController
+                                                .pickImage();
+                                        print("Image Picked" + imagePath.value);
+                                      },
+                                      child: Container(
+                                        height: 200,
+                                        width: 200,
+                                        decoration: BoxDecoration(
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .background,
+                                          borderRadius:
+                                              BorderRadius.circular(100),
+                                        ),
+                                        child: imagePath.value == ""
+                                            ? Icon(
+                                                Icons.add,
+                                              )
+                                            : ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(100),
+                                                child: Image.file(
+                                                  File(imagePath.value),
+                                                  fit: BoxFit.cover,
+                                                ),
+                                              ),
+                                      ),
+                                    )
+                                  : Container(
+                                      height: 200,
+                                      width: 200,
+                                      decoration: BoxDecoration(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .background,
+                                        borderRadius:
+                                            BorderRadius.circular(100),
+                                      ),
+                                      child: imagePath.value == ""
+                                          ? Icon(
+                                              Icons.image,
+                                            )
+                                          : ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(100),
+                                              child: Image.file(
+                                                File(imagePath.value),
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ),
+                                    ),
                             ),
                           ],
                         ),
@@ -102,14 +163,13 @@ class ProfilePage extends StatelessWidget {
                             enabled: isEdit.value,
                             decoration: InputDecoration(
                               filled: isEdit.value,
-                              labelText: "Phone",
+                              labelText: "Number",
                               prefixIcon: Icon(
                                 Icons.phone,
                               ),
                             ),
                           ),
                         ),
-
                         SizedBox(
                           height: 20,
                         ),
