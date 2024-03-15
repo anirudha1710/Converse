@@ -23,8 +23,7 @@ class ProfilePage extends StatelessWidget {
         TextEditingController(text: profileController.currentUser.value.about);
     ImagePickerController imagePickerController =
         Get.put(ImagePickerController());
-    RxString imagePath =
-        "".obs;
+    RxString imagePath = "".obs;
 
     return Scaffold(
       appBar: AppBar(
@@ -59,6 +58,11 @@ class ProfilePage extends StatelessWidget {
                                         imagePath.value =
                                             await imagePickerController
                                                 .pickImage();
+                                        await profileController.updateProfile(
+                                            imagePath.value,
+                                            name.text,
+                                            about.text,
+                                            phone.text);
                                         print("Image Picked" + imagePath.value);
                                       },
                                       child: Container(
