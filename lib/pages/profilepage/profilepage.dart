@@ -18,7 +18,7 @@ class ProfilePage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(10),
-        child: Column(
+        child: ListView(
           children: [
             Container(
               padding: EdgeInsets.all(10),
@@ -51,28 +51,32 @@ class ProfilePage extends StatelessWidget {
                         SizedBox(
                           height: 20,
                         ),
-                        TextField(
-                          controller: name,
-                          enabled: isEdit.value,
-                          decoration: InputDecoration(
-                            filled: isEdit.value,
-                            labelText: "Name",
-                            prefixIcon: Icon(
-                              Icons.person,
+                        Obx(
+                          () => TextField(
+                            controller: name,
+                            enabled: isEdit.value,
+                            decoration: InputDecoration(
+                              filled: isEdit.value,
+                              labelText: "Name",
+                              prefixIcon: Icon(
+                                Icons.person,
+                              ),
                             ),
                           ),
                         ),
-                        // SizedBox(
-                        //   height: 10,
-                        // ),
-                        TextField(
-                          controller: status,
-                          enabled: isEdit.value,
-                          decoration: InputDecoration(
-                            filled: isEdit.value,
-                            labelText: "Status",
-                            prefixIcon: Icon(
-                              Icons.info,
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Obx(
+                          () => TextField(
+                            controller: status,
+                            enabled: isEdit.value,
+                            decoration: InputDecoration(
+                              filled: isEdit.value,
+                              labelText: "Status",
+                              prefixIcon: Icon(
+                                Icons.info,
+                              ),
                             ),
                           ),
                         ),
@@ -87,26 +91,51 @@ class ProfilePage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        TextField(
-                          controller: phone,
-                          enabled: isEdit.value,
-                          decoration: InputDecoration(
-                            filled: isEdit.value,
-                            labelText: "Phone",
-                            prefixIcon: Icon(
-                              Icons.phone,
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Obx(
+                          () => TextField(
+                            controller: phone,
+                            enabled: isEdit.value,
+                            decoration: InputDecoration(
+                              filled: isEdit.value,
+                              labelText: "Phone",
+                              prefixIcon: Icon(
+                                Icons.phone,
+                              ),
                             ),
                           ),
                         ),
-                        
-                        SizedBox(height: 20,),
+
+                        SizedBox(
+                          height: 20,
+                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            PrimaryButton(btnName: "Edit", icon: Icons.edit, ontap: (){}),
+                            Obx(
+                              () => isEdit.value
+                                  ? PrimaryButton(
+                                      btnName: "Save",
+                                      icon: Icons.save,
+                                      ontap: () {
+                                        isEdit.value = false;
+                                      },
+                                    )
+                                  : PrimaryButton(
+                                      btnName: "Edit",
+                                      icon: Icons.edit,
+                                      ontap: () {
+                                        isEdit.value = true;
+                                      },
+                                    ),
+                            ),
                           ],
                         ),
-                        SizedBox(height: 20,),
+                        SizedBox(
+                          height: 20,
+                        ),
                       ],
                     ),
                   )
