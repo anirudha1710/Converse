@@ -2,6 +2,7 @@ import 'package:converse/config/images.dart';
 import 'package:converse/config/string.dart';
 import 'package:converse/pages/homePage/widget/chatsList.dart';
 import 'package:converse/pages/homePage/widget/tabBar.dart';
+import 'package:converse/pages/profilepage/profilepage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -39,7 +40,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           ),
           IconButton(
             onPressed: () {
-              Get.toNamed("/profilePage");
+              //Get.toNamed("/profilePage");
+              Get.to(ProfilePage());
             },
             icon: Icon(Icons.more_vert),
           ),
@@ -53,7 +55,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       ),
       body: Padding(
         padding: const EdgeInsets.all(10),
-        child: TabBarView( controller: tabController,
+        child: TabBarView(
+          controller: tabController,
           children: [
             ChatList(),
             ListView(

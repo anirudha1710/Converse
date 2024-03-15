@@ -1,14 +1,12 @@
 import 'package:converse/controller/authController.dart';
 import 'package:converse/controller/profileController.dart';
-import 'package:converse/pages/profile/widgets/userInfo.dart';
+import 'package:converse/pages/userprofile/widgets/userInfo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-import '../../config/images.dart';
-
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+class UserProfilePage extends StatelessWidget {
+  const UserProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {

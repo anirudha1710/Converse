@@ -1,9 +1,10 @@
 import 'package:converse/pages/auth/authPage.dart';
 import 'package:converse/pages/chat/chatPage.dart';
 import 'package:converse/pages/homePage/homePage.dart';
-import 'package:converse/pages/profile/profilepage.dart';
-import 'package:converse/pages/profile/updateProfile.dart';
 import 'package:get/get.dart';
+
+import '../pages/userprofile/userprofilepage.dart';
+import '../pages/userprofile/userupdateProfile.dart';
 
 var pagePath = [
   GetPage(
@@ -21,14 +22,14 @@ var pagePath = [
     page: () => ChatPage(),
     transition: Transition.rightToLeft,
   ),
-  GetPage(
-    name: "/profilePage",
-    page: () => ProfilePage(),
-    transition: Transition.rightToLeft,
-  ),
-  GetPage(
-    name: "/updateProfilePage",
-    page: () => UpdateProfile(),
-    transition: Transition.rightToLeft,
-  ),
+  // GetPage(
+  //   name: "/profilePage",
+  //   page: () => UserProfilePage(),
+  //   transition: Transition.rightToLeft,
+  // ),
+  // GetPage(
+  //   name: "/updateProfilePage",
+  //   page: () => UserUpdateProfile(),
+  //   transition: Transition.rightToLeft,
+  // ),
 ];

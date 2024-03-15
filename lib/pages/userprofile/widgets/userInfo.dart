@@ -30,7 +30,7 @@ class LoginUserInfo extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      AssetsImage.girlPic,
+                      AssetsImage.boyPic,
                     ),
                   ],
                 ),
