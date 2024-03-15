@@ -56,6 +56,8 @@ class AuthController extends GetxController{
   Future<void> initUser(String email, String name) async{
     var newUser = UserModel(
       email: email,
+      name: name,
+      id: auth.currentUser!.uid,
     );
     try{
       await db.collection("users").doc(auth.currentUser!.uid).set(newUser.toJson());
